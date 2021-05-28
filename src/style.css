@@ -47,8 +47,13 @@ li {
   bottom: 520px;
 }
 
+.weather-img {
+  display: block;
+  margin: 0 auto;
+  float: right;
+}
+
 .degrees {
   font-size: 80px;
   font-weight: 600;
-  justify-content: center;
 }
