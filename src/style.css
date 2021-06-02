@@ -22,7 +22,6 @@ li {
   list-style: none;
   text-align: center;
   font-size: 30px;
-
   font-weight: 500;
 }
 
@@ -37,8 +36,8 @@ li {
 .weather-app {
   width: 60%;
   max-width: 1000px;
+  display: block;
   margin: 0 auto;
-
   padding: 80px;
   background: #b6a0aed0;
   color: aliceblue;
