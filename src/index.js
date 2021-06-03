@@ -20,6 +20,35 @@ function displayTemperature(response) {
 
   let windSpeedElement = document.querySelector("#wind");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+}
+
+// Date
+
+function formatDate(timestamp) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let date = new Date(timestamp);
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let day = days[date.getDay()];
+  return `${hours}:${minutes} ${day}`;
 }
 
 let apiKey = "a0a0d90971165d38ca9ee74546a17771";
