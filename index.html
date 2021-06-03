@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <title>Weather App</title>
   </head>
@@ -28,7 +29,8 @@
     />
     <div class="container">
       <div class="weather-app">
-        <h1>Oslo <span class="country">Norway</span></h1>
+        <h1 id="city"></h1>
+        <span class="country" id="country"> </span>
         <h2>14:39 Thu 27 May 2021</h2>
         <div class="row">
           <div class="col-6">
@@ -40,8 +42,8 @@
             />
             <br />
             <div class="float-left">
-              <strong>
-                10
+              <strong id="temperature">
+                
               </strong> 
               <span class="unit"> 
               •c | <a href="#">•f</a> 
@@ -52,9 +54,9 @@
 
         <div class="col-6">
           <ul>
-            <li>Partly Cloudy</li>
-            <li>Wind Speed: 5 km/ph</li>
-            <li>Humidity: 50%</li>
+            <li><span id="description"></span></li>
+            <li>Wind Speed: <span id="wind"></span> km/h</li>
+            <li>Humidity: <span id="humidity"></span>%</li>
           </ul>
         </div>
       </div>

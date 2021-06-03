@@ -14,6 +14,7 @@ h1 {
   font-size: 60px;
   font-weight: 600;
 }
+
 ul {
   margin-top: 45px;
 }
@@ -24,6 +25,7 @@ li {
   text-align: center;
   font-size: 28px;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 /* image */
@@ -34,8 +36,14 @@ li {
   height: 600px;
 }
 /* Weather Elements */
+
+.country {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+}
 .weather-app {
-  width: 60%;
+  /* width: 70%; */
   max-width: 1000px;
   display: block;
   margin: 0 auto;
@@ -44,7 +52,7 @@ li {
   color: aliceblue;
   border-radius: 20px;
   position: relative;
-  bottom: 570px;
+  bottom: 550px;
 }
 
 .current-temp img {
