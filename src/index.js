@@ -1,6 +1,5 @@
 // Weather API
 function displayTemperature(response) {
-  console.log(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -9,7 +8,6 @@ function displayTemperature(response) {
 
   let countryElement = document.querySelector("#country");
   countryElement.innerHTML = response.data.sys.country;
-  console.log(response.data.sys.country);
 
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -56,8 +54,22 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${hours}:${minutes} ${day}`;
 }
+/* Search Form */
 
-let apiKey = "a0a0d90971165d38ca9ee74546a17771";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Oslo&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "a0a0d90971165d38ca9ee74546a17771";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  console.log(cityInputElement.value);
+}
+
+search("London");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

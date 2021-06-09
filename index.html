@@ -29,40 +29,58 @@
     />
     <div class="container">
       <div class="weather-app">
+        <div>
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Search a city..."
+                  class="form-control"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
         <h1 id="city"></h1>
         <span class="country" id="country"> </span>
         <h2 id="date"></h2>
         <div class="row">
           <div class="col-6">
             <div class="clearfix current-temp">
-            <img
-              class="float-left"
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              id="icon"
-              alt="Weather Icon"
-            />
-            <br />
-            <div class="float-left">
-              <strong id="temperature">
-                
-              </strong> 
-              <span class="unit"> 
-              •c | <a href="#">•f</a> 
-              </span>
+              <img
+                class="float-left"
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                id="icon"
+                alt="Weather Icon"
+              />
+              <br />
+              <div class="float-left">
+                <strong id="temperature"> </strong>
+                <span class="unit"> •c | <a href="#">•f</a> </span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-6">
-          <ul>
-            <li><span id="description"></span></li>
-            <li>Wind Speed: <span id="wind"></span> km/h</li>
-            <li>Humidity: <span id="humidity"></span>%</li>
-          </ul>
+          <div class="col-6">
+            <ul>
+              <li><span id="description"></span></li>
+              <li>Wind Speed: <span id="wind"></span> km/h</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
     <small>
       Coded by <a href="https://github.com/Sarah-MB97">Sarah Bailey</a>
     </small>

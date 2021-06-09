@@ -45,6 +45,7 @@ li {
 .weather-app {
   /* width: 70%; */
   max-width: 1000px;
+  width: 70%;
   display: block;
   margin: 0 auto;
   padding: 80px;
