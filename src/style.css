@@ -80,3 +80,12 @@ li {
   font-size: 60px;
   font-weight: 600;
 }
+
+.weather-temp .active {
+  color: aliceblue;
+  cursor: default;
+}
+
+.weather-temp .active:hover {
+  text-decoration: none;
+}
