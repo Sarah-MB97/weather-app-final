@@ -60,13 +60,22 @@ function displayFahrenheitTemp(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
 
 let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 /* Search Form */
 
