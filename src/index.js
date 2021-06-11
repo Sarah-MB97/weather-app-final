@@ -1,27 +1,23 @@
 // Weather API
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
-
   let countryElement = document.querySelector("#country");
-  countryElement.innerHTML = response.data.sys.country;
-
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
-
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.main.humidity;
-
   let windSpeedElement = document.querySelector("#wind");
-  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemp = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -54,7 +50,27 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${hours}:${minutes} ${day}`;
 }
+
+/* C to F Conversion */
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusTemp = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 /* Search Form */
+
+search("London");
 
 function search(city) {
   let apiKey = "a0a0d90971165d38ca9ee74546a17771";
@@ -69,7 +85,4 @@ function handleSubmit(event) {
   console.log(cityInputElement.value);
 }
 
-search("London");
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+/* Notes: Need to fix time zones, make clock time more accurate, revisit C to F */
