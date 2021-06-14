@@ -22,7 +22,7 @@
     <title>Weather App</title>
   </head>
   <body>
-    <img class="image-card" src="img/vectorland.PNG" alt="Foggy weather" />
+    <img class="image-card" src="img/vectorland.PNG" alt="Vector" />
     <div class="container">
       <div class="weather-app">
         <div>
@@ -39,7 +39,7 @@
               <div class="col-3">
                 <input
                   type="submit"
-                  value="search"
+                  value="Search"
                   class="btn btn-primary w-100"
                 />
               </div>
@@ -78,11 +78,27 @@
             </ul>
           </div>
         </div>
+        <small>
+          Coded by <a href="https://github.com/Sarah-MB97">Sarah Bailey</a>
+        </small>
       </div>
     </div>
-    <small>
-      Coded by <a href="https://github.com/Sarah-MB97">Sarah Bailey</a>
-    </small>
+    <div class="weather-forecast">
+      <div class="row">
+        <div class="col-2">
+          <div class="forecast-date">Tues</div>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/rain.png"
+            alt=""
+            width="42"
+          />
+          <div class="forecast-temp">
+            <span class="forecast-max-temp"> 18• </span>|
+            <span class="forecast-min-temp"> 12•</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="src/index.js"></script>
   </body>
