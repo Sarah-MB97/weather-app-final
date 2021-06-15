@@ -37,7 +37,7 @@ small {
 .image-card {
   object-fit: fill;
   width: 100%;
-  height: 575px;
+  height: 625px;
 }
 /* Weather Elements */
 
@@ -55,8 +55,9 @@ small {
   background: #b6a0aed0;
   color: aliceblue;
   border-radius: 20px;
-  position: relative;
-  bottom: 565px;
+  position: absolute;
+  top: 25px;
+  text-align: center;
 }
 
 .current-temp img {
